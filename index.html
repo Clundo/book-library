@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Book Library</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="styles/global.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+          rel="stylesheet">
+
+</head>
+<body>
+<div id="header" class="card">
+    <h1>Library</h1>
+    <button id="add-button" class='button' onclick={openModal()}><i class="material-symbols-outlined">add</i>Add Book</button>
+</div>
+<div id="book-grid">
+
+</div>
+<div class="hidden fade-out" id="overlay" onclick={closeModal()}></div>
+<div class="hidden" id="modal-container">
+    <div class="card fade-out" id="add-modal">
+        <h2>Add Book Details</h2>
+        <form id="add-book-form">
+            <div class="fieldSet">
+                <label for="title">*Title</label>
+                <input id="title" type="text" required>
+            </div>
+            <div class="fieldSet">
+                <label for="author">*Author Name</label>
+                <input id="author" type="text" required>
+            </div>
+            <div class="fieldSet">
+                <label for="coverUrl">*Cover Url</label>
+                <input id="coverUrl" type="text" required>
+            </div>
+
+            <button type="submit" class="button">Submit</button>
+        </form>
+    </div>
+</div>
+
+</body>
+<script src="scripts/scripts.js"></script>
+</html>

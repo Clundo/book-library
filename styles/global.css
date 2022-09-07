@@ -1,0 +1,195 @@
+html, p, h1, h2, h3, h4, h5, h6, button, input {
+    border: none;
+    background: none;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+}
+
+html {
+    height: min(100%, 100vh);
+    width: min(100%, 100vw);
+    background-color: rgb(13, 86, 124);
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    height: min(100%, 100vh);
+}
+
+#modal-container {
+    overflow: hidden;
+
+}
+
+#add-button {
+    display: flex;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+#add-modal {
+    transition: ease-in-out 0.2s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: 10;
+    padding: 1em ;
+    width: max(10%, 300px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.hidden {
+    width: 0;
+    height: 0;
+    display: none;
+    overflow: hidden;
+}
+
+.visible-overlay {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.fade-out {
+    opacity: 0;
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+
+.visible-modal-container {
+    width: min(500px, 50%);
+    height: min(500px, 50%);
+
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(13, 86, 124, 0.95);
+    z-index: 2;
+}
+
+.visible-overlay {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+}
+
+.card {
+    padding: 0.5em 1em;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    text-shadow: 0 0 1px 0 rgba(31, 38, 135, 0.37)
+}
+
+#add-book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 2em;
+}
+
+.fieldSet {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.fieldSet input {
+    padding: 0.5em 1em;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+
+input:focus, button:focus{
+    outline: 3px solid rgba(255, 255, 255, 0.5);
+
+}
+#add-book-form button {
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.button {
+    padding: 0.5em 1em;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 1px 4px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    text-shadow: 0 0 1px 0 rgba(31, 38, 135, 0.37);
+    cursor: pointer
+}
+
+.button:hover {
+    transition: ease-in-out 0.2s;
+    transform: translateY(-0.05em);
+    border: 1px solid rgba(255, 255, 255, 0.38);
+}
+
+#header {
+    display: flex;
+    justify-content: space-between;
+}
+
+#book-grid {
+    margin: 1.5em 0;
+    display: grid;
+    gap: 1.5em;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 300px));
+}
+
+.book-card {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 2em;
+    position: relative;
+}
+
+.book-cover {
+    margin: -1em;
+    width: calc(100% + 2em);
+    height: 300px;
+    object-fit: cover;
+}
+
+.read-button {
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.book-card:hover .delete-button{
+    opacity: 1;
+}
+
+.delete-button {
+    opacity: 0;
+    transition: ease-in-out 0.2s;
+    position: absolute;
+    top: 10px;
+    background-color: rgba(31, 38, 135, 0.37);
+    right: 10px;box-shadow: 0 1px 4px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    text-shadow: 0 0 1px 0 rgba(31, 38, 135, 0.37);
+    cursor: pointer;
+}
